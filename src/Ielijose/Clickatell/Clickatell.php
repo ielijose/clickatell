@@ -14,7 +14,7 @@ class Clickatell {
 		$this->api_id = $config['api_id'];
 	}
 
-	public static function send($message, $to){
+	public function send($message, $to){
 		$text = urlencode($message);
 
 		$url = $this->baseurl."/http/auth?user=".$this->user."&password=".$this->password."&api_id=".$this->api_id;
