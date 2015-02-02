@@ -27,10 +27,11 @@ class ClickatellServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function register()
-	{
+	{	
 		$this->app['clickatell'] = $this->app->share(function($app)
 		{
-			return new Clickatell;
+			$config = $app['config']->get('clickatell::config');
+			return new Clickatell($config);
 		});
 
 		$this->app->booting(function()

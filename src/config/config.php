@@ -6,6 +6,6 @@ return array(
 
 	'password' => 'password',
 
-	'api_id' => 'api_id',
+	'migrations' => 'api_id',
 
 );

@@ -1,13 +1,20 @@
 <?php namespace Ielijose\Clickatell;
 
 class Clickatell {
-	private $user = \Config::get('clickatell::user');
-	private $password = \Config::get('clickatell::password');
-	private $api_id = \Config::get('clickatell::api_id');
+	private $user = "";
+	private $password = "";
+	private $api_id = "";
 
 	private $baseurl ="http://api.clickatell.com";
 
-	public  function send($message, $to){
+	function __construct($config)
+	{
+		$this->user = $config['user'];
+		$this->password = $config['password'];
+		$this->api_id = $config['api_id'];
+	}
+
+	public static function send($message, $to){
 		$text = urlencode($message);
 
 		$url = $this->baseurl."/http/auth?user=".$this->user."&password=".$this->password."&api_id=".$this->api_id;
