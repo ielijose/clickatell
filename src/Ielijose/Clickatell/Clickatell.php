@@ -1,9 +1,9 @@
 <?php namespace Ielijose\Clickatell;
 
 class Clickatell {
-	private $user = Config::get('clickatell::user');
-	private $password = Config::get('clickatell::password');
-	private $api_id = Config::get('clickatell::api_id');
+	private $user = \Config::get('clickatell::user');
+	private $password = \Config::get('clickatell::password');
+	private $api_id = \Config::get('clickatell::api_id');
 
 	private $baseurl ="http://api.clickatell.com";
 
